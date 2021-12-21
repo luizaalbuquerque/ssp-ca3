@@ -1,6 +1,6 @@
 <?xml version = "1.0" encoding = "UTF-8"/>
 <options>
-  <section category="Computers">
+  <section name="Computers">
     <entry>
       <item>Laptop</item>
       <price>3,000.00</price>
@@ -14,7 +14,7 @@
       <price>1,500.00</price>
     </entry>
   </section>
-  <section category="TVs">
+  <section name="TVs">
     <entry>
       <item>Digital</item>
       <price>1,300.00</price>
@@ -28,7 +28,7 @@
       <price>150.00</price>
     </entry>
   </section>
-  <section category="Cameras">
+  <section name="Cameras">
     <entry>
       <item>Digital</item>
       <price>260.00</price>
@@ -42,7 +42,7 @@
       <price>70.00</price>
     </entry>
   </section>
-  <section category="Gaming">
+  <section name="Gaming">
     <entry>
       <item>Console</item>
       <price>400.00</price>
@@ -56,7 +56,7 @@
       <price>1,600.00</price>
     </entry>
   </section>
-  <section category="Smart">
+  <section name="Smart">
     <entry>
       <item>Watch</item>
       <price>200.00</price>
