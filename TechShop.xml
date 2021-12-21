@@ -65,8 +65,8 @@
       <item>Assistent</item>
       <price>55.00</price>
     </entry>
-    <entry sales="Drones">
-      <item>Shakshuka</item>
+    <entry sales="true">
+      <item>Drones</item>
       <price>90.00</price>
     </entry>
   </section>
