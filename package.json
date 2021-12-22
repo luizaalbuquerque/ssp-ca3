@@ -9,11 +9,19 @@
     "type": "git",
     "url": "git+https://github.com/luizaalbuquerque/ssp-ca3.git"
   },
-  "author": "",
+  "author": "Luiza Albuquerque",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/luizaalbuquerque/ssp-ca3/issues"
   },
   "homepage": "https://github.com/luizaalbuquerque/ssp-ca3#readme",
-  "description": ""
+  "description": "continuous assignment",
+  "dependencies": {
+    "express": "^4.17.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "path": "^0.12.7",
+    "xml2js": "^0.4.23",
+    "xslt-processor": "^0.11.5"
+  }
 }
