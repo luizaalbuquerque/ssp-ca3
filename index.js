@@ -10,8 +10,6 @@ const   http = require('http'), //This module provides the HTTP server functiona
 const   router = express(), 
         server = http.createServer(router);
 
-        router.use(express.static(path.resolve(__dirname, 'views'))); // we serve static 
-   // content from "views" folder 
 router.use(express.static(path.resolve(__dirname,'views'))); //We serve static content from "views" folder
 router.use(express.urlencoded({extended: true})); //We allow the data sent from the client to be encoded in a URL targeting our end point
 router.use(express.json()); //We include support for JSON
@@ -92,7 +90,7 @@ router.post('/post/delete', function (req, res) {
         XMLtoJSON('TechShop.xml', function (err, result) {
             if (err) throw (err);
             
-            delete result.menu.section[obj.section].entry[obj.entree];
+            delete result.options.section[obj.section].entry[obj.entree];
 
             console.log(JSON.stringify(result, null, "  "));
 
