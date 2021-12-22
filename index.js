@@ -9,7 +9,7 @@ const   http = require('http'), //This module provides the HTTP server functiona
 const   router = express(), 
         server = http.createServer(router);
 
-        router.use(express.static(path.resolve(_dirname,´views´))); // we serve static 
+        router.use(express.static(path.resolve(__dirname, 'views'))); // we serve static 
    // content from "views" folder 
 router.use(express.static(path.resolve(__dirname,'views'))); //We serve static content from "views" folder
 router.use(express.urlencoded({extended: true})); //We allow the data sent from the client to be encoded in a URL targeting our end point
