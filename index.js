@@ -57,10 +57,10 @@ router.get('/get/html', function (req, res) {
 });
 
 router.post('/post/json', function (req, res) {
-    window.alert("Hi Luiz!");
+    
     function appendJSON(obj) {
-
-        console.log(obj)
+        window.alert("Hi Luiz!");
+        console.log(obj);
 
         XMLtoJSON('TechShop.xml', function (err, result) {
             if (err) throw (err);
