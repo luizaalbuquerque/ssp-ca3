@@ -49,7 +49,7 @@
                         </xsl:for-each>
                     </tbody>
                 </table>
-                <form class="indent" action="calculateTotal('techTable');">
+                <form class="indent" onsubmit="return calculate('techTable');">
                     <p>
                         <input type="button" name="btnCalcTotal" value="Calculate Total" id="calcTotal" />
                 Total: € </p>

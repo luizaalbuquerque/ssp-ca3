@@ -81,6 +81,11 @@ router.post('/post/json', function (req, res) {
 
 });
 
+router.post('/post/calculate',function (req, res){
+    console.log("testing");
+    //calculateTotal('techTable');
+})
+
 router.post('/post/delete', function (req, res) {
 
     function deleteJSON(obj) {
