@@ -106,7 +106,7 @@ router.post('/post/delete', function (req, res) {
 
 });
 
-server.listen(process.env.PORT || 3002, process.env.IP || "0.0.0.0", function() {
+server.listen(process.env.PORT || 3003, process.env.IP || "0.0.0.0", function() {
     const addr = server.address();
     console.log("Server listening at", addr.address + ":" + addr.port)
 });
