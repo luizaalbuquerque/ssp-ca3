@@ -5,12 +5,12 @@
         <head>
             <title>Tech Shop options</title>
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-            <link rel="stylesheet" href="css/TechShop.css" />
-            <script type="text/javascript" src="js/TechShop.js">x</script>
+            <link rel="stylesheet" href="../css/TechShop.css" />
+            <script type="text/javascript" src="../js/TechShop.js">x</script>
         </head>
             <body>
                 <h2>
-                    <img src="img/TechShop.gif" alt="Tech logo" width="58" height="100" />Welcome to the Tech Shop</h2>
+                    <img src="../img/TechShop.gif" alt="Tech logo" width="58" height="100" />Welcome to the Tech Shop</h2>
                 <p>Select your products from the options below. To calculate the receipt, click the Calculate Receipt button. Check the "Highlight Sales" box to highlight sales products.</p>
                 <table id="techTable" border="1" class="indent">
                     <thead>
@@ -49,7 +49,7 @@
                         </xsl:for-each>
                     </tbody>
                 </table>
-                <form class="indent">
+                <form class="indent" action="calculateTotal('techTable');">
                     <p>
                         <input type="button" name="btnCalcTotal" value="Calculate Total" id="calcTotal" />
                 Total: € </p>
