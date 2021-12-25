@@ -57,7 +57,7 @@ router.get('/get/html', function (req, res) {
 });
 
 router.post('/post/json', function (req, res) {
-
+    alert("Hi Luiz!");
     function appendJSON(obj) {
 
         console.log(obj)
