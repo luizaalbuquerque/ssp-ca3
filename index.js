@@ -59,9 +59,7 @@ router.get('/get/html', function (req, res) {
 router.post('/post/json', function (req, res) {
     
     function appendJSON(obj) {
-        let alert = require('alert'); 
-        alert("Hello Luiza!");
-
+        
         console.log(obj);
 
         XMLtoJSON('TechShop.xml', function (err, result) {
@@ -71,9 +69,9 @@ router.post('/post/json', function (req, res) {
 
             console.log(JSON.stringify(result, null, "  "));
 
-            JSONtoXML('TechShop.xml', result, function (err) {
-                if (err) console.log(err);
-            });
+            //JSONtoXML('TechShop.xml', result, function (err) {
+            //    if (err) console.log(err);
+            //});
         });
     };
 
