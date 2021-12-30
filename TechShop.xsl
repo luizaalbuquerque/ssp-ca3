@@ -51,8 +51,8 @@
                 </table>
                 <form class="indent" onsubmit="return calculate('techTable');">
                     <p>
-                        <input type="button" name="btnCalcTotal" value="Calculate Total" id="calcTotal" />
-                Total: € </p>
+                        <input type="button" name="btnCalcTotal" value="Calculate Total" id="calcTotal" />Total: € 
+                    </p>
                 <input type="text" name="txtAmt" /><input type="checkbox" name="cbOpts" value="isSales" id="showSales" /><label for="showSales">Highlight Sales Products</label></p>
                 </form>
             </body>
