@@ -26,11 +26,11 @@ function calculateTotal(idTechTable) {
     // return the price as a decimal number with 2 decimal places
     return Math.round(fTotal * 100.0) / 100.0;
 };
-// This function either turns on or off the row highlighting for vegetarian
-// items (depending on the value of bShowVeg)
+// This function either turns on or off the row highlighting for sales
+// items (depending on the value of bShowSales)
 function highlightSales(idTable, bShowSales) {
-    // if bShowVeg is true, then we're highlighting vegetarian
-    //	meals, otherwise we're unhighlighting them.
+    // if bShowSales is true, then we're highlighting sales
+    //	products, otherwise we're unhighlighting them.
     var i = 0;
     var oTable = document.getElementById(idTable);
     var oTBODY = oTable.getElementsByTagName('TBODY')[0];
