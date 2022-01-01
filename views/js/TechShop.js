@@ -45,7 +45,7 @@ function highlightSales(idTable, bShowSales) {
     for (i = 0; i < aTRs.length; i++) {
         if (aTRs[i].getAttribute('sales') && aTRs[i].getAttribute('sales') == "true") {
             if (bShowSales) {
-                aTRs[i].style.backgroundColor = "lightGreen";
+                aTRs[i].style.backgroundColor = "lightBlue";
             } else {
                 aTRs[i].style.backgroundColor = "";
             };
