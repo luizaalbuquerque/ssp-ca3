@@ -26,6 +26,11 @@ function calculateTotal(idTechTable) {
     // return the price as a decimal number with 2 decimal places
     return Math.round(fTotal * 100.0) / 100.0;
 };
+function doSomething(){
+
+    alert("hey im doing something");
+    
+    }
 // This function either turns on or off the row highlighting for sales
 // items (depending on the value of bShowSales)
 function highlightSales(idTable, bShowSales) {
@@ -39,7 +44,7 @@ function highlightSales(idTable, bShowSales) {
     // "sales" attribute on it.
     for (i = 0; i < aTRs.length; i++) {
         if (aTRs[i].getAttribute('sales') && aTRs[i].getAttribute('sales') == "true") {
-            if (bShowVeg) {
+            if (bShowSales) {
                 aTRs[i].style.backgroundColor = "lightGreen";
             } else {
                 aTRs[i].style.backgroundColor = "";
@@ -59,11 +64,11 @@ function getParentTag(oNode, sParentType) {
     return oParent;
 };
 window.addEventListener("load", function () {
-    document.forms[0].txtAmt.value = calculateTotal('optionsTable');
+    document.forms[0].txtAmt.value = calculateTotal('TechTable');
     document.querySelector("#calcTotal").addEventListener("click", function () {
-        document.forms[0].txtAmt.value = calculateTotal('optionsTable');
+        document.forms[0].txtAmt.value = calculateTotal('TechTable');
     });
     document.querySelector("#showSales").addEventListener("click", function () {
-        highlightSales('optionsTable', this.checked);
+        highlightSales('TechTable', this.checked);
     });
 });
