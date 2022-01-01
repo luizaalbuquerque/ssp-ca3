@@ -11,7 +11,7 @@
             <body>
                 <h2>
                     <img src="../img/TechShop.gif" alt="Tech logo" width="58" height="100"  onclick="doSomething()"/>Welcome to the Tech Shop</h2>
-                <p>Select your products from the options below. To calculate the receipt, click the Calculate Receipt button. Check the "Highlight Sales" box to highlight sales products.</p>
+                <p>Select your products from the options below. To calculate the receipt, click the Calculate Total button. Check the "Highlight Sales" box to highlight sales products.</p>
                 <table id="TechTable" border="1" class="indent">
                     <thead>
                         <tr>
