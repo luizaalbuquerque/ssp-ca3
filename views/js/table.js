@@ -16,7 +16,9 @@ function draw_table() {
 };
 
 function select_row() {
-	$("#techTable tbody tr[id]").click(function () {
+
+	console.log("test");
+	$("#TechTable tbody tr[id]").click(function () {
 		$(".selected").removeClass("selected");
 		$(this).addClass("selected");
 		var section = $(this).prevAll("tr").children("td[colspan='3']").length - 1;
