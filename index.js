@@ -65,7 +65,7 @@ router.post('/post/json', function (req, res) {
         XMLtoJSON('TechShop.xml', function (err, result) {
             if (err) throw (err);
 
-            result.menu.section[obj.sec_n].entry.push({ 'item': obj.item, 'price': obj.price });
+            result.options.section[obj.sec_n].entry.push({ 'item': obj.item, 'price': obj.price });
 
             console.log(JSON.stringify(result, null, "  "));
 
