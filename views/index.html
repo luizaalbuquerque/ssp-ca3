@@ -12,42 +12,49 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/TechShop.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script scr="js/table.js"></script>
-
-   
-
 
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
-            <link rel="stylesheet" href="../css/TechShop.css" />
+    <table id="TechTable" border="1" class="indent">
+
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+        <link rel="stylesheet" href="../css/TechShop.css" />
 </head>
+
 <body>
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
 
             <a class="navbar-brand" href="#"> Tech Shop</a>
-            
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-                 
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Store</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Sales Products</a></li>
-                            <li><a class="dropdown-item" href="#"> Delete or Add</a></li>
+
+                            <li><a class="dropdown-item" href="#" for="showSales"> <input type="checkbox" name="cbOpts"
+                                        value="isSales" id="showSales" /> Sales Products</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="#">Total in the Bag</a></li>
-                        </ul>
+                            <form class="indent" onsubmit="return calculate('TechTable');">
+                                <p> Total: €
+                                    <input type="text" name="txtAmt" />
+                                </p>
+                                <li><a class="dropdown-item" href="#" type="button" name="btnCalcTotal"
+                                        value="Calculate Total" id="calcTotal">Total in the Bag</a>
+                            </form>
                     </li>
+
+                </ul>
+                </li>
                 </ul>
             </div>
         </div>
@@ -55,12 +62,21 @@
     <!-- Page content-->
     <div class="container">
         <div class="text-center mt-5">
-            <img src="../img/TechShop.gif" alt="Tech logo" width="58" height="100"  onclick="doSomething()"/>
+            <img src="../img/TechShop.gif" alt="Tech logo" width="58" height="100" onclick="doSomething()" />
             <h1>Welcome to Tech Shop</h1>
 
             <p class="lead">Select your product from the options below</p>
+            <p>To calculate total, select the items and go to "store", on the top right of the page, and click in the
+                option "total in the bag".</p>
+            <p>To see sales products, go to "store", on the top right of the page and tic the box "sales products". </p>
             <div id="results" class="col-lg-8 mb-5 order-2"></div>
             <div id="menu" class="col-lg-4 mb-5 order-1">
+                <div class="d-grid gap-2">
+                    <button id="delete" class="btn btn-danger btn-block mt-3">Delete</button>
+                </div>
+                <p class="text-muted text-center">To delete an entree, click the required row first, and then click
+                    "Delete" above</p>
+            </div>
                 <form enctype="application/json" action="/post/json" method="post">
                     <div class="form-group">
                         <select class="form-control" name="sec_n">
@@ -70,77 +86,34 @@
                             <option value="3">Virtual Reality</option>
                             <option value="4">Smart</option>
                         </select>
+                        
                         <input class="form-control mt-3" type="text" name="item" placeholder=" add an Item">
                         <input class="form-control mt-3" type="text" name="price" placeholder="add a Price">
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-primary btn-block mt-3">Submit</button>
+                            <p class="text-muted text-center">To add an entree, select the type, add the item and price,
+                                and then click "Submite" above</p>
+
                         </div>
                     </div>
                 </form>
 
-                <div class="d-grid gap-2">
-                    <button id="delete" class="btn btn-danger btn-block mt-3">Delete</button>
-                </div>
-                <p class="text-muted text-center">To delete an entree, click the required row first</p>
-            </div>
+               
             <div id="results" class="col-lg-12 mb-5"></div>
         </div>
 
-     
-      <p>Select your products from the options below. To calculate the total, click the "Calculate Total" button.</p> 
-      <p> Check the "Highlight Sales" box to highlight sales products.
-      <input type="checkbox" name="cbOpts" value="isSales" id="showSales" />
-     <label for="showSales">Highlight Sales Products</label></p>
-      <table id="TechTable" border="1" class="indent">
-          <thead>
-              <tr>
-                  <th colspan="3">Tech Shop Options</th>
-              </tr>
-              <tr>
-                  <th>Select</th>
-                  <th>Item</th>
-                  <th>Price</th>
-              </tr>
-          </thead>
-          <tbody>
-              <xsl:for-each select="//section">
-                  <tr>
-                      <td colspan="3">
-                          <xsl:value-of select="@name" />
-                      </td>
-                  </tr>
-                  <xsl:for-each select="entry">
-                      <tr>
-                          <xsl:attribute name="sales">
-                              <xsl:value-of select="boolean(@sales)" />
-                          </xsl:attribute>
-                          <td align="center">
-                              <input name="item0" type="checkbox" />
-                          </td>
-                          <td>
-                              <xsl:value-of select="item" />
-                          </td>
-                          <td align="right">
-                              <xsl:value-of select="price" />
-                          </td>
-                      </tr>
-                  </xsl:for-each>
-              </xsl:for-each>
-          </tbody>
-      </table>
-      <form class="indent" onsubmit="return calculate('TechTable');">
-          <p> Total: € <input type="text" name="txtAmt" /></p>
-        <input type="button" name="btnCalcTotal" value="Calculate Total" id="calcTotal" />
-      </form>
         <script src="../js/TechShop.js">x</script>
 
-
-        
-    
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">x</script>
+    <script src="js/table.js">x</script>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">x</script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js">x</script>
 </body>
+
 </html>

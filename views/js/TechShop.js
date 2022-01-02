@@ -26,6 +26,7 @@ function calculateTotal(idTechTable) {
     // return the price as a decimal number with 2 decimal places
     return Math.round(fTotal * 100.0) / 100.0;
 };
+
 function doSomething(){
 
     alert("hey im doing something");
