@@ -1,4 +1,8 @@
+/* Code Reference: https://github.com/mikhail-cct/ssp-practical by Mikhail. Accessed on 28th of December 2021. */
+
+// creating variable
 var gEntreeCount = 0;
+
 // returns a number that represents the sum of all the selected menu
 // item prices.
 function calculateTotal(idTechTable) {
@@ -59,6 +63,7 @@ function getParentTag(oNode, sParentType) {
     };
     return oParent;
 };
+// eventListener to give functionality to the functions above 
 window.addEventListener("load", function () {
     document.forms[0].txtAmt.value = calculateTotal('TechTable');
     document.querySelector("#calcTotal").addEventListener("click", function () {

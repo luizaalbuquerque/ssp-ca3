@@ -1,3 +1,6 @@
+/* Code Reference: https://github.com/mikhail-cct/ssp-practical by Mikhail. Accessed on 28th of December 2021. */
+
+// function 
 function draw_table() {
 	$("#results").empty();
 	$.getJSONuncached = function (url) {

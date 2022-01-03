@@ -1,3 +1,5 @@
+<!-- Code Reference: https://github.com/mikhail-cct/ssp-practical by Mikhail. Accessed on 28th of December 2021. -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,35 +14,34 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/TechShop.css" rel="stylesheet" />
-
+    <!-- getting table -->
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <table id="TechTable" border="1" class="indent">
-
+        <!-- style sheet connection -->
         <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
         <link rel="stylesheet" href="../css/TechShop.css" />
-
+        <!-- JavaScript connection -->
         <script defer src="js/script.js"></script>
 </head>
 
 <body>
     <!-- Responsive navbar-->
-    <nav id ="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-
+            <!-- Web title -->
             <a class="navbar-brand" href="#"> Tech Shop</a>
-
+            <!-- navbar -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-
+                    <!-- dropdown navbar -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Store</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-
                             <li><a class="dropdown-item" href="#" for="showSales"> <input type="checkbox" name="cbOpts"
                                         value="isSales" id="showSales" /> Sales Products</a></li>
                             <li>
@@ -51,10 +52,9 @@
                                     <input type="text" name="txtAmt" />
                                 </p>
                                 <li><a class="dropdown-item" href="#" type="button" name="btnCalcTotal"
-                                        value="Calculate Total" id="calcTotal"onclick="total()" >Total in the Bag</a>
+                                        value="Calculate Total" id="calcTotal" onclick="total()">Total in the Bag</a>
                             </form>
                     </li>
-
                 </ul>
                 </li>
                 </ul>
@@ -64,67 +64,63 @@
     <!-- Page content-->
     <div class="container">
         <div class="row">
-           
-                    <div class="text-center mt-5">
-                 
-            <img src="../img/TechShop.gif" alt="Tech logo" width="20%" " />
-
+            <div class="text-center mt-5">
+                <!-- Web image -->
+                <img src="../img/TechShop.gif" alt="Tech logo" width="20%" " />
             <h1>Welcome to Tech Shop</h1>
-            
-            <p class="lead">Select your product from the table options below</p>
-            <p>To calculate total, tick the items and go to "Store", on the top right of the page, and click in the
-                option "total in the bag".</p>
-       
-      </div>
-      
-      
-            
-         
-                <form id = "form" enctype="application/json" action="/post/json" method="post" >
-                    <div class="form-group" >
-                        <select class="form-control text-center " name="sec_n">
-                            <option value="0">Computers</option>
-                            <option value="1">TVs</option>
-                            <option value="2">Cameras</option>
-                            <option value="3">Virtual Reality</option>
-                            <option value="4">Smart</option>
-                        </select>
-                       
-                        <div id ="error"></div>
-                        <input class="form-control text-center mt-3" id="item" type="text" name="item" placeholder=" add an Item" >
-                        <input class="form-control text-center mt-3" id="price" type="number" name="price" placeholder="add a Price" required>
-  
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-block mt-3 " onclick="submited()" >Submit</button>
-                            <p class="text-muted text-center">To add an entree, select the type, add the item and price,
-                                and then click "Submit" above</p>
-                             
-                                    <p class="lead text-center">NOW ON SALES!!!</p>
-                                    <img src="../img/banner04.jpg" width="100%"  id="img-banner"/>
-                                    <p class="text-center">To see sales products, go to "Store", on the top right of the page and tick the box "sales products". </p>
-                        </div>
-                        <div id="menu" class=" col-lg-4 mb-5 order-1 ">
-                    </div>
-                    
-                </form>
-
-              </div> 
-            <div id="results" class="col-lg-12 mb-5"></div>
-            <div class="d-grid gap-2">
-                <button id="delete" class="btn btn-danger btn-block mt-3" onclick="deleting()">Delete</button>
+            <!-- user information -->
+            <p class=" lead">Select your product from the table options below</p>
+                <p>To calculate total, tick the items and go to "Store", on the top right of the page, and click in the
+                    option "total in the bag".</p>
             </div>
-            <p class="text-muted text-center">To delete an entree, click the required row first, and then click
-                "Delete" above</p>
+            <!-- selection from form -->
+            <form id="form" enctype="application/json" action="/post/json" method="post">
+                <div class="form-group">
+                    <select class="form-control text-center " name="sec_n">
+                        <option value="0">Computers</option>
+                        <option value="1">TVs</option>
+                        <option value="2">Cameras</option>
+                        <option value="3">Virtual Reality</option>
+                        <option value="4">Smart</option>
+                    </select>
+                    <!-- item input from from, required and has to be text-->
+                    <div id="error"></div>
+                    <input class="form-control text-center mt-3" id="item" type="text" name="item"
+                        placeholder=" add an Item" required>
+                    <!-- price input from form, required and has to be numeric -->
+                    <input class="form-control text-center mt-3" id="price" type="number" name="price"
+                        placeholder="add a Price" required>
+                    <!-- submit button, and user informative text -->
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-block mt-3 "
+                            onclick="submited()">Submit</button>
+                        <p class="text-muted text-center">To add an entree, select the type, add the item and price,
+                            and then click "Submit" above</p>
+                        <!-- advertising sales on web -->
+                        <p class="lead text-center">NOW ON SALES!!!</p>
+                        <!-- image reference: https://www.vecteezy.com/vector-art/1828967-red-banner-shopping-day-design-template-concept by Google. Accessed on 28th of December of 2021. -->
+                        <img src="../img/banner04.jpg" width="100%" id="img-banner" />
+                        <p class="text-center">To see sales products, go to "Store", on the top right of the page and
+                            tick the box "sales products". </p>
+                    </div>
+                    <div id="menu" class=" col-lg-4 mb-5 order-1 ">
+                    </div>
+            </form>
         </div>
-
-        <script src="../js/TechShop.js">x</script>
-
+        <div id="results" class="col-lg-12 mb-5"></div>
+        <div class="d-grid gap-2">
+            <!-- delete button -->
+            <button id="delete" class="btn btn-danger btn-block mt-3" onclick="deleting()">Delete</button>
+        </div>
+        <p class="text-muted text-center">To delete an entree, click the required row first, and then click
+            "Delete" above</p>
     </div>
-
+    <!-- script connection -->
+    <script src="../js/TechShop.js">x</script>
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">x</script>
     <script src="js/table.js">x</script>
-
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">x</script>
     <!-- Core theme JS-->
