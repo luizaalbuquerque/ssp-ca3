@@ -27,11 +27,6 @@ function calculateTotal(idTechTable) {
     return Math.round(fTotal * 100.0) / 100.0;
 };
 
-function doSomething(){
-
-    alert("hey im doing something");
-    
-    }
 // This function either turns on or off the row highlighting for sales
 // items (depending on the value of bShowSales)
 function highlightSales(idTable, bShowSales) {

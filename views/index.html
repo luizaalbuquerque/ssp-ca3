@@ -18,6 +18,8 @@
 
         <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
         <link rel="stylesheet" href="../css/TechShop.css" />
+
+        <script defer src="js/script.js"></script>
 </head>
 
 <body>
@@ -63,7 +65,7 @@
     <div class="container">
         <div class="row">
                     <div class="text-center mt-5">
-            <img src="../img/TechShop.gif" alt="Tech logo" width="58" height="100" onclick="doSomething()" />
+            <img src="../img/TechShop.gif" alt="Tech logo" width="58" height="100" " />
             <h1>Welcome to Tech Shop</h1>
 
             <p class="lead">Select your product from the options below</p>
@@ -78,7 +80,7 @@
                 <p class="text-muted text-center">To delete an entree, click the required row first, and then click
                     "Delete" above</p>
             </div>
-                <form enctype="application/json" action="/post/json" method="post">
+                <form id = "form" enctype="application/json" action="/post/json" method="post">
                     <div class="form-group">
                         <select class="form-control" name="sec_n">
                             <option value="0">Computers</option>
@@ -87,14 +89,14 @@
                             <option value="3">Virtual Reality</option>
                             <option value="4">Smart</option>
                         </select>
-                        
-                        <input class="form-control mt-3" type="text" name="item" placeholder=" add an Item">
-                        <input class="form-control mt-3" type="text" name="price" placeholder="add a Price">
+
+                        <div id ="error"></div>
+                        <input class="form-control mt-3" id="item" type="text" name="item" placeholder=" add an Item" required>
+                        <input class="form-control mt-3" id="price" type="text" name="price" placeholder="add a Price">
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-block mt-3">Submit</button>
+                            <button type="submit" onclick="doSomething()" class="btn btn-primary btn-block mt-3" >Submit</button>
                             <p class="text-muted text-center">To add an entree, select the type, add the item and price,
                                 and then click "Submite" above</p>
-
                         </div>
                     </div>
                 </form>
