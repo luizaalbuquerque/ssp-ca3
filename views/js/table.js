@@ -1,6 +1,6 @@
 /* Code Reference: https://github.com/mikhail-cct/ssp-practical by Mikhail. Accessed on 28th of December 2021. */
 
-// function 
+// function to draw table 
 function draw_table() {
 	$("#results").empty();
 	$.getJSONuncached = function (url) {
@@ -18,6 +18,7 @@ function draw_table() {
 	$.getJSONuncached("/get/html")
 };
 
+// function to select row when "clicked"
 function select_row() {
 
 	console.log("test");
@@ -29,6 +30,7 @@ function select_row() {
 		delete_row(section, entree);
 	})
 };
+// function to delete rows when click on the delete button 
 
 function delete_row(sec, ent) {
 	$("#delete").click(function () {

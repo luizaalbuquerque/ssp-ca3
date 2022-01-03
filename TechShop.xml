@@ -1,5 +1,8 @@
+<!-- Code Reference: https://github.com/mikhail-cct/ssp-practical by Mikhail. Accessed on 28th of December 2021. -->
+
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <options>
+<!-- table structure -->
   <section name="Computers">
     <entry>
       <item>Laptop</item>

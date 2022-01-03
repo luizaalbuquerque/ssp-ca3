@@ -37,6 +37,7 @@ router.get('/get/html', function (req, res) {
 
     res.writeHead(200, { 'Content-Type': 'text/html' });
 
+    // variables
     let xml = fs.readFileSync('TechShop.xml', 'utf8'),
         xsl = fs.readFileSync('TechShop.xsl', 'utf8');
 
@@ -58,11 +59,13 @@ router.get('/get/html', function (req, res) {
 });
 
 router.post('/post/json', function (req, res) {
-    
+
+    // function to add JSON
     function appendJSON(obj) {
-        
+
         console.log(obj);
 
+        // function to convert XML to JSON
         XMLtoJSON('TechShop.xml', function (err, result) {
             if (err) throw (err);
 
@@ -70,6 +73,7 @@ router.post('/post/json', function (req, res) {
 
             console.log(JSON.stringify(result, null, "  "));
 
+            // function to convert JSON to XML
             JSONtoXML('TechShop.xml', result, function (err) {
                 if (err) console.log(err);
             });
@@ -82,13 +86,15 @@ router.post('/post/json', function (req, res) {
 
 });
 
-router.post('/post/calculate',function (req, res){
+
+router.post('/post/calculate', function (req, res) {
     console.log("testing");
     //calculateTotal('techTable');
 })
 
 router.post('/post/delete', function (req, res) {
 
+    // function to delete item using JSON
     function deleteJSON(obj) {
 
         console.log(obj)
@@ -112,6 +118,7 @@ router.post('/post/delete', function (req, res) {
 
 });
 
+// confirm connection
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function () {
     const addr = server.address();
     console.log("Server listening at", addr.address + ":" + addr.port)
