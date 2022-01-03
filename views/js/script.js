@@ -19,9 +19,9 @@ const errorElement = document.getElementById('error')
 // if it is empty will output the following message 
 form.addEventListener('submit', (e) => {
   let messages = []
-  //     if (item.value === '' || item.value == null) {
-  //       messages.push('Item is required')
-  //     }
+      if (item.value === '' || item.value == null) {
+        messages.push('Item is required')
+      }
 
   // check the 'price'input, if it is iquals or higher than 20 characters, 
   // will output the following message 
