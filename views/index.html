@@ -24,7 +24,7 @@
 
 <body>
     <!-- Responsive navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id ="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
 
             <a class="navbar-brand" href="#"> Tech Shop</a>
@@ -51,7 +51,7 @@
                                     <input type="text" name="txtAmt" />
                                 </p>
                                 <li><a class="dropdown-item" href="#" type="button" name="btnCalcTotal"
-                                        value="Calculate Total" id="calcTotal">Total in the Bag</a>
+                                        value="Calculate Total" id="calcTotal"onclick="total()" >Total in the Bag</a>
                             </form>
                     </li>
 
@@ -91,10 +91,11 @@
                         </select>
                        
                         <div id ="error"></div>
-                        <input class="form-control text-center mt-3" id="item" type="text" name="item" placeholder=" add an Item" required>
-                        <input class="form-control text-center mt-3 id="price" type="text" name="price" placeholder="add a Price" required>
+                        <input class="form-control text-center mt-3" id="item" type="text" name="item" placeholder=" add an Item" >
+                        <input class="form-control text-center mt-3" id="price" type="number" name="price" placeholder="add a Price" required>
+  
                         <div class="d-grid gap-2">
-                            <button type="submit" onclick="doSomething()" class="btn btn-primary btn-block mt-3" >Submit</button>
+                            <button type="submit" class="btn btn-primary btn-block mt-3 " onclick="submited()" >Submit</button>
                             <p class="text-muted text-center">To add an entree, select the type, add the item and price,
                                 and then click "Submit" above</p>
                              
@@ -110,7 +111,7 @@
               </div> 
             <div id="results" class="col-lg-12 mb-5"></div>
             <div class="d-grid gap-2">
-                <button id="delete" class="btn btn-danger btn-block mt-3">Delete</button>
+                <button id="delete" class="btn btn-danger btn-block mt-3" onclick="deleting()">Delete</button>
             </div>
             <p class="text-muted text-center">To delete an entree, click the required row first, and then click
                 "Delete" above</p>

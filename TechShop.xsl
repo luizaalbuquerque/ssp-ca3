@@ -17,8 +17,8 @@
                     <tbody>
                         <xsl:for-each select="//section">
                             <tr>
-                                <td colspan="3">
-                                    <xsl:value-of select="@name" />
+                                <td colspan="3"  style="text-align: left;">
+                               <strong>     <xsl:value-of select="@name" /> </strong>
                                 </td>
                             </tr>
                             <xsl:for-each select="entry">

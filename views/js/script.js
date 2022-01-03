@@ -5,13 +5,13 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
+
+
 const item = document.getElementById('item')
-const price = document.getElementById('price')
+const price = parseInt(document.getElementById('price').value)
 const form = document.getElementById('form')
 const errorElement = document.getElementById('error')
 
-check('price').isLength({ min: 2 })
-.withMessage('Price Must Be at Least 2 Characters')
 
 form.addEventListener('submit', (e) => {
     let messages = []
@@ -22,20 +22,25 @@ form.addEventListener('submit', (e) => {
     if (price.value.length >= 20) {
       messages.push('Price must be less than 20 characters')
     }
-
-    if (isNaN(price)) {
-      messages.push('Price has to be numeric')
-    }
-
   
     if (messages.length > 0) {
       e.preventDefault()
       errorElement.innerText = messages.join(', ')
     }
   })
+  function deleting(){
 
-function doSomething(){
-
-    alert("hey im doing something");
+ alert("The product was Deleted!");
     
     }
+    function submited(){
+
+      alert("The product was Submited!");
+         
+         }
+
+         function total(){
+
+          alert("Go back to Store to check the total");
+             
+             }

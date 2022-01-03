@@ -38,6 +38,11 @@ td, th {
 th {
     font-weight: bold;
 }
+#navbar{
+    position: sticky;
+   top: 0;
+   z-index: 100; 
+}
 
 .selected {
             background-color: #fc3030;
