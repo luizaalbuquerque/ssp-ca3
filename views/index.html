@@ -64,45 +64,56 @@
     <!-- Page content-->
     <div class="container">
         <div class="row">
+           
                     <div class="text-center mt-5">
-            <img src="../img/TechShop.gif" alt="Tech logo" width="58" height="100" " />
-            <h1>Welcome to Tech Shop</h1>
+                 
+            <img src="../img/TechShop.gif" alt="Tech logo" width="20%" " />
 
-            <p class="lead">Select your product from the options below</p>
-            <p>To calculate total, select the items and go to "store", on the top right of the page, and click in the
+            <h1>Welcome to Tech Shop</h1>
+            
+            <p class="lead">Select your product from the table options below</p>
+            <p>To calculate total, tick the items and go to "Store", on the top right of the page, and click in the
                 option "total in the bag".</p>
-            <p>To see sales products, go to "store", on the top right of the page and tic the box "sales products". </p>
-            <div id="results" class="col-lg-8 mb-5 order-2"></div>
-            <div id="menu" class="col-lg-4 mb-5 order-1">
-                <div class="d-grid gap-2">
-                    <button id="delete" class="btn btn-danger btn-block mt-3">Delete</button>
-                </div>
-                <p class="text-muted text-center">To delete an entree, click the required row first, and then click
-                    "Delete" above</p>
-            </div>
-                <form id = "form" enctype="application/json" action="/post/json" method="post">
-                    <div class="form-group">
-                        <select class="form-control" name="sec_n">
+       
+      </div>
+      
+      
+            
+         
+                <form id = "form" enctype="application/json" action="/post/json" method="post" >
+                    <div class="form-group" >
+                        <select class="form-control text-center " name="sec_n">
                             <option value="0">Computers</option>
                             <option value="1">TVs</option>
                             <option value="2">Cameras</option>
                             <option value="3">Virtual Reality</option>
                             <option value="4">Smart</option>
                         </select>
-
+                       
                         <div id ="error"></div>
-                        <input class="form-control mt-3" id="item" type="text" name="item" placeholder=" add an Item" required>
-                        <input class="form-control mt-3" id="price" type="text" name="price" placeholder="add a Price">
+                        <input class="form-control text-center mt-3" id="item" type="text" name="item" placeholder=" add an Item" required>
+                        <input class="form-control text-center mt-3 id="price" type="text" name="price" placeholder="add a Price" required>
                         <div class="d-grid gap-2">
                             <button type="submit" onclick="doSomething()" class="btn btn-primary btn-block mt-3" >Submit</button>
                             <p class="text-muted text-center">To add an entree, select the type, add the item and price,
-                                and then click "Submite" above</p>
+                                and then click "Submit" above</p>
+                             
+                                    <p class="lead text-center">NOW ON SALES!!!</p>
+                                    <img src="../img/banner04.jpg" width="100%"  id="img-banner"/>
+                                    <p class="text-center">To see sales products, go to "Store", on the top right of the page and tick the box "sales products". </p>
                         </div>
+                        <div id="menu" class=" col-lg-4 mb-5 order-1 ">
                     </div>
+                    
                 </form>
 
               </div> 
             <div id="results" class="col-lg-12 mb-5"></div>
+            <div class="d-grid gap-2">
+                <button id="delete" class="btn btn-danger btn-block mt-3">Delete</button>
+            </div>
+            <p class="text-muted text-center">To delete an entree, click the required row first, and then click
+                "Delete" above</p>
         </div>
 
         <script src="../js/TechShop.js">x</script>

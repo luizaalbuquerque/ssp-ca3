@@ -10,6 +10,8 @@ const price = document.getElementById('price')
 const form = document.getElementById('form')
 const errorElement = document.getElementById('error')
 
+check('price').isLength({ min: 2 })
+.withMessage('Price Must Be at Least 2 Characters')
 
 form.addEventListener('submit', (e) => {
     let messages = []
@@ -17,17 +19,14 @@ form.addEventListener('submit', (e) => {
       messages.push('Item is required')
     }
   
-    if (price.value.length <= 2) {
-      messages.push('price must be longer than 2 characters')
-    }
-  
     if (price.value.length >= 20) {
       messages.push('Price must be less than 20 characters')
     }
-  
-    if (price.value === 'price') {
-      messages.push('Price cannot be price')
+
+    if (isNaN(price)) {
+      messages.push('Price has to be numeric')
     }
+
   
     if (messages.length > 0) {
       e.preventDefault()

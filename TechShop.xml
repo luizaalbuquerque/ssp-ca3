@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <options>
-  <section name="Computers">
+<section name="Computers">
     <entry>
       <item>Laptop</item>
       <price>3000.00</price>
