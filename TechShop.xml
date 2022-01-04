@@ -1,3 +1,6 @@
+<!-- Code Reference: https://github.com/mikhail-cct/ssp-practical by Mikhail. Accessed on 28th of December 2021. -->
+
+
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <options>
   <section name="Computers">
@@ -15,10 +18,6 @@
     </entry>
   </section>
   <section name="TVs">
-    <entry>
-      <item>Digital</item>
-      <price>1300.00</price>
-    </entry>
     <entry>
       <item>Projector</item>
       <price>200.00</price>
